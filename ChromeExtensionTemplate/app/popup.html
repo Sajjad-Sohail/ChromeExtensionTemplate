@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+    <title>EveryApply Chrome Extension Template</title>
+    <style>
+        body {
+            min-width: 300px;
+            min-height: 350px;
+            overflow-x: hidden;
+            border: solid 2px #1861ac;
+            box-shadow: 0 .75rem .75rem rgba(0, 0, 0, .05);
+        }
+
+        .Site-Name {
+            color: #fff;
+            background-color: #1b6ec2;
+            border-color: #1861ac;
+            padding: 0.3em;
+            text-align: center;
+        }
+
+        .Site-Body {
+            padding: 0.8em;
+        }
+
+        img {
+            margin: 5px;
+            border: 2px solid black;
+            vertical-align: middle;
+            width: 75px;
+            height: 75px;
+        }
+
+        button {
+            color: #fff;
+            background-color: #1b6ec2;
+        }
+
+            button:hover {
+                cursor: pointer;
+            }
+    </style>
+
+    <script src="jquery.js"></script>
+    <script src="popup.js"></script>
+</head>
+  <body>
+      
+      <form   name="theform">
+          <div class="Site-Name">
+              <h2>Every Apply</h2>
+          </div>
+          <div class="Site-Body">
+              <h4 class="modal-title">Add New Application</h4>
+
+              <input type="text" id="URL" name="URLTextbox" placeholder="Enter URL Here..." style="min-width:3em;" onkeyup="VerifyURL()" />
+              <button type="submit" class="btn btn-primary" style="width:6em;"
+                      id="NewURL" name="AddURL" value="Add New URL" data-dismiss="modal">
+                  <span class="fas fa-spinner fa-spin HideSection" id="LoadingIcon"></span><span class="" id="ButtonText">Paste URL</span>
+              </button>
+              <label class="text-danger" id="ErrorMessage"></label>
+              <br />
+
+
+              <!-- Modal -->
+              <div class=" " id=" " role=" " style="margin-top:0.5em;">
+                  <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                          <div class="modal-header">
+
+
+
+                          </div>
+
+                          <div class="modal-body p-2">
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>Company</label>
+                                  </div>
+
+                                  <div class="col-6">
+                                      <input type="text" class="form-control" id="Company" />
+                                  </div>
+
+                              </div>
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>Position</label>
+                                  </div>
+                                  <div class="col-6">
+                                      <input type="text" class="form-control" id="Position" name="Position" />
+                                  </div>
+
+                              </div>
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>Location</label>
+                                  </div>
+                                  <div class="col-6">
+                                      <input type="text" class="form-control" id="Location" />
+                                  </div>
+
+                              </div>
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>Date</label>
+                                  </div>
+                                  <div class="col-6">
+                                      <input type="text" class="form-control" id="Date" />
+                                  </div>
+
+                              </div>
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>Source</label>
+                                  </div>
+                                  <div class="col-6">
+                                      <input type="text" class="form-control" id="Source" />
+                                  </div>
+
+                              </div>
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>Status</label>
+                                  </div>
+                                  <div class="col-6">
+                                      <select id="Status">
+
+                                          <option selected>Applied</option>
+                                          <option>Viewed</option>
+                                          <option>Callback</option>
+                                          <option>Interview Scheduled</option>
+                                          <option>Selected</option>
+                                          <option>Application Not Selected</option>
+
+                                      </select>
+                                  </div>
+
+                              </div>
+                              <div class="row p-2">
+                                  <div class="col-4">
+                                      <label>URL</label>
+                                  </div>
+                                  <div class="col-6">
+                                      <input type="text" class="form-control" id="URLModel" />
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <div class="modal-footer">
+                              <button type="submit" class="btn btn-primary" id="NewApplication" name="AddApplication" value="Add New Application"> Add </button>
+
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                          </div>
+
+                      </div>
+
+                  </div>
+              </div>
+              <!-- <label class="text-danger" id="ErrorMessage">@Model.SuccessMessage</label>-->
+          </div>
+
+      </form>
+  </body>
+</html>
+
